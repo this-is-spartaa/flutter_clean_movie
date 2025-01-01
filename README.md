@@ -12,7 +12,7 @@
   - [X] Entity 구현 및 테스트
     - Movie
     - MovieDetail
-  - [ ] MovieRepository 구현 및 테스트
+  - [X] MovieRepository 구현 및 테스트
   - [ ] UseCase 구현 및 테스트
 
 - Presentation Layer 구현
