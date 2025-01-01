@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_clean_movie/domain/entity/movie.dart';
+import 'package:flutter_clean_movie/presentation/movie_detail/movie_detail_page.dart';
 import 'package:flutter_clean_movie/presentation/widgets/movie_image.dart';
 
 class HeroMovieImage extends StatelessWidget {
@@ -17,7 +18,15 @@ class HeroMovieImage extends StatelessWidget {
     final heroTag = '${heroTagPrefix}_${movie.id}';
     return GestureDetector(
       onTap: () {
-        // TODO Move to DetailPage
+        Navigator.push(context, MaterialPageRoute(
+          builder: (context) {
+            return MovieDetailPage(
+              id: movie.id,
+              heroTag: heroTag,
+              imgUrl: movie.posterPath,
+            );
+          },
+        ));
       },
       child: Hero(
         tag: heroTag,
