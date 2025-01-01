@@ -13,7 +13,7 @@
     - Movie
     - MovieDetail
   - [X] MovieRepository 구현 및 테스트
-  - [ ] UseCase 구현 및 테스트
+  - [X] UseCase 구현 및 테스트
 
 - Presentation Layer 구현
   - [ ] HomePage ViewModel 구현 및 테스트
