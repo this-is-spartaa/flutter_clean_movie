@@ -8,7 +8,7 @@
     - `현재 상영중` `인기순` `평점` `높은순` `개봉예정` 공통 : MovieResponseDto
     - `영화 상세` : MovieDetailDto
     - https://quicktype.io/dart
-  - [ ] MovieDataSource 구현 및 테스트
+  - [X] MovieDataSource 구현 및 테스트
   - [ ] Entity 구현 및 테스트
     - Movie
     - MovieDetail
