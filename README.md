@@ -16,7 +16,7 @@
   - [X] UseCase 구현 및 테스트
 
 - Presentation Layer 구현
-  - [ ] HomePage ViewModel 구현 및 테스트
+  - [X] HomePage ViewModel 구현 및 테스트
   - [ ] HomePage 구현
   - [ ] DetailPage ViewModel 구현 및 테스트
   - [ ] DetailPage 구현
