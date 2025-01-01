@@ -9,7 +9,7 @@
     - `영화 상세` : MovieDetailDto
     - https://quicktype.io/dart
   - [X] MovieDataSource 구현 및 테스트
-  - [ ] Entity 구현 및 테스트
+  - [X] Entity 구현 및 테스트
     - Movie
     - MovieDetail
   - [ ] MovieRepository 구현 및 테스트
