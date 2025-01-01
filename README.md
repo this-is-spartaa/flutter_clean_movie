@@ -1,16 +1,31 @@
-# flutter_clean_movie
+# TMDB 영화정보앱 (클린아키텍쳐)
 
-A new Flutter project.
+![clean_arch](clean_arch.png)
 
-## Getting Started
+## TODO
+- Data & Domain Layer 구현
+  - [ ] DTO 구현 및 테스트
+    - `현재 상영중` `인기순` `평점` `높은순` `개봉예정` 공통 : MovieResponseDto
+    - `영화 상세` : MovieDetailDto
+    - https://quicktype.io/dart
+  - [ ] MovieDataSource 구현 및 테스트
+  - [ ] Entity 구현 및 테스트
+    - Movie
+    - MovieDetail
+  - [ ] MovieRepository 구현 및 테스트
+  - [ ] UseCase 구현 및 테스트
 
-This project is a starting point for a Flutter application.
+- Presentation Layer 구현
+  - [ ] HomePage ViewModel 구현 및 테스트
+  - [ ] HomePage 구현
+  - [ ] DetailPage ViewModel 구현 및 테스트
+  - [ ] DetailPage 구현
+  - [ ] HomePage -> DetailPage Hero 위젯 적용
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## TMDB 요청 정보
+- 요청 헤더 : { Authorization : Bearer <YOUR_TOKEN> }
+- 현재 상영중 : https://api.themoviedb.org/3/movie/now_playing?language=ko-KR&page=1
+- 인기순 : https://api.themoviedb.org/3/movie/popular?language=ko-KR&page=1
+- 평점 높은순 : https://api.themoviedb.org/3/movie/top_rated?language=ko-KR&page=1
+- 개봉 예정 : https://api.themoviedb.org/3/movie/upcoming?language=ko-KR&page=1
+- 영화 상세 정보 : [https://api.themoviedb.org/3/movie/영화아이디?language=ko-KR](https://api.themoviedb.org/3/movie/1?language=ko-KR)
