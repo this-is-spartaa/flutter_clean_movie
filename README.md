@@ -18,7 +18,7 @@
 - Presentation Layer 구현
   - [X] HomePage ViewModel 구현 및 테스트
   - [X] HomePage 구현
-  - [ ] DetailPage ViewModel 구현 및 테스트
+  - [X] DetailPage ViewModel 구현 및 테스트
   - [ ] DetailPage 구현
   - [ ] HomePage -> DetailPage Hero 위젯 적용
 
