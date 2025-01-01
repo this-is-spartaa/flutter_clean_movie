@@ -19,8 +19,8 @@
   - [X] HomePage ViewModel 구현 및 테스트
   - [X] HomePage 구현
   - [X] DetailPage ViewModel 구현 및 테스트
-  - [ ] DetailPage 구현
-  - [ ] HomePage -> DetailPage Hero 위젯 적용
+  - [X] DetailPage 구현
+  - [X] HomePage -> DetailPage Hero 위젯 적용
 
 ## TMDB 요청 정보
 - 요청 헤더 : { Authorization : Bearer <YOUR_TOKEN> }
