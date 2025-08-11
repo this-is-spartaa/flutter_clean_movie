@@ -4,7 +4,7 @@ import 'package:flutter_clean_movie/domain/entity/movie_detail.dart';
 abstract interface class MovieRepository {
   Future<List<Movie>?> fetchNowPlayingMovies();
 
-  Future<List<Movie>?> fetchPopularMovies();
+  Future<List<Movie>?> fetchPopularMovies([int page]);
 
   Future<List<Movie>?> fetchTopRatedMovies();
 

@@ -34,6 +34,7 @@ class HomePage extends StatelessWidget {
             const HomeLabel(label: '인기순'),
             MovieRankListView(
               movies: state.popularMovies ?? [],
+              fetchMore: ref.read(homeViewModel.notifier).fetchPopularMovies,
             ),
             const HomeLabel(label: '평점 높은순'),
             MovieHorizontalListView(

@@ -4,7 +4,7 @@ import 'package:flutter_clean_movie/data/dto/movie_response_dto.dart/movie_respo
 abstract interface class MovieDataSource {
   Future<MovieResponseDto?> fetchNowPlayingMovies();
 
-  Future<MovieResponseDto?> fetchPopularMovies();
+  Future<MovieResponseDto?> fetchPopularMovies([int page]);
 
   Future<MovieResponseDto?> fetchTopRatedMovies();
 

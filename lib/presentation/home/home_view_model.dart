@@ -65,12 +65,27 @@ class HomeViewModel extends Notifier<HomeState> {
   }
 
   Future<void> fetchPopularMovies() async {
-    final result = await ref.read(fetchPopularMoviesUsecaseProvider).execute();
-    state = state.copyWith(
-      mostPopular: result?.first,
-      popularMovies: result ?? [],
-    );
+    if (_isFetchingPopular) {
+      return;
+    }
+    _isFetchingPopular = true;
+    print("loading");
+    final result =
+        await ref.read(fetchPopularMoviesUsecaseProvider).execute(_popularPage);
+    if (result?.isNotEmpty ?? false) {
+      _popularPage++;
+      final prevPopularMovies = state.popularMovies ?? [];
+      final nextPopularMovies = [...prevPopularMovies, ...result!];
+      state = state.copyWith(
+        mostPopular: nextPopularMovies.first,
+        popularMovies: nextPopularMovies,
+      );
+    }
+    _isFetchingPopular = false;
   }
+
+  bool _isFetchingPopular = false;
+  int _popularPage = 1;
 
   Future<void> fetchTopRatedMovies() async {
     final result = await ref.read(fetchTopRatedMoviesUsecaseProvider).execute();

@@ -44,10 +44,10 @@ class TmbdMovieDataSourceImpl implements MovieDataSource {
 
   /// https://api.themoviedb.org/3/movie/popular?language=ko-KR&page=1
   @override
-  Future<MovieResponseDto?> fetchPopularMovies() async {
+  Future<MovieResponseDto?> fetchPopularMovies([int page = 1]) async {
     final response = await _dioClient.get(
       '$_baseUrl/popular',
-      queryParameters: _commonQueryParam,
+      queryParameters: {..._commonQueryParam, 'page': page},
     );
     if (response.statusCode == 200) {
       return MovieResponseDto.fromJson(response.data);
