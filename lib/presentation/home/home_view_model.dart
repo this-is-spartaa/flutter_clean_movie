@@ -56,6 +56,12 @@ class HomeViewModel extends Notifier<HomeState> {
     ]);
   }
 
+  Future<void> refreshAll() async {
+    _popularPage = 1;
+    _isFetchingPopular = false;
+    await fetchAll();
+  }
+
   Future<void> fetchNowPlayingMovies() async {
     final result =
         await ref.read(fetchNowPlayingMoviesUsecaseProvider).execute();
@@ -72,14 +78,22 @@ class HomeViewModel extends Notifier<HomeState> {
     print("loading");
     final result =
         await ref.read(fetchPopularMoviesUsecaseProvider).execute(_popularPage);
+
     if (result?.isNotEmpty ?? false) {
+      if (_popularPage == 1) {
+        state = state.copyWith(
+          mostPopular: result!.first,
+          popularMovies: result,
+        );
+      } else {
+        final prevPopularMovies = state.popularMovies ?? [];
+        final nextPopularMovies = [...prevPopularMovies, ...result!];
+        state = state.copyWith(
+          mostPopular: nextPopularMovies.first,
+          popularMovies: nextPopularMovies,
+        );
+      }
       _popularPage++;
-      final prevPopularMovies = state.popularMovies ?? [];
-      final nextPopularMovies = [...prevPopularMovies, ...result!];
-      state = state.copyWith(
-        mostPopular: nextPopularMovies.first,
-        popularMovies: nextPopularMovies,
-      );
     }
     _isFetchingPopular = false;
   }
